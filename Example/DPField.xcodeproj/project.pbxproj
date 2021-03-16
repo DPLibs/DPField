@@ -189,6 +189,7 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
+				37DC84DFC7D8869B65DCF4A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,14 +273,42 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DPField_Example/Pods-DPField_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DPField/DPField.framework",
+				"${BUILT_PRODUCTS_DIR}/DPLibrary/DPLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DPField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DPLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DPField_Example/Pods-DPField_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37DC84DFC7D8869B65DCF4A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DPField_Tests/Pods-DPField_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DPLibrary/DPLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DPLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DPField_Tests/Pods-DPField_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		497033CA670B10719724D827 /* [CP] Check Pods Manifest.lock */ = {

@@ -1,7 +1,5 @@
 use_frameworks!
 
-platform :ios, '9.0'
-
 target 'DPField_Example' do
   pod 'DPField', :path => '../'
 
@@ -10,16 +8,5 @@ target 'DPField_Example' do
 
     pod 'DPLibrary'
     
-  end
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings["ONLY_ACTIVE_ARCH"] = "YES"
-      if Gem::Version.new('9.0') > Gem::Version.new(config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'])
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
-      end
-    end
   end
 end
