@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.source_files = 'DPField/**/*'
   s.swift_version = '5.0'
   
-  s.dependency 'DPLibrary', '~> 2.1.4'
+  s.dependency 'DPLibrary'
 end

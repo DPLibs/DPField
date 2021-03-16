@@ -8,7 +8,7 @@ target 'DPField_Example' do
   target 'DPField_Tests' do
     inherit! :search_paths
 
-    pod 'DPLibrary', '~> 2.1.4'
+    pod 'DPLibrary'
     
   end
 end
