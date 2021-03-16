@@ -1,0 +1,6 @@
+framework module DPField {
+  umbrella header "DPField-umbrella.h"
+
+  export *
+  module * { export * }
+}

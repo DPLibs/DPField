@@ -1,0 +1,16 @@
+PODS:
+  - DPField (1.0.0)
+
+DEPENDENCIES:
+  - DPField (from `../`)
+
+EXTERNAL SOURCES:
+  DPField:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DPField: 0bc009bdf1593db23c8590bd693bb1232f48be26
+
+PODFILE CHECKSUM: b33e5afbedb6c63b88422a9a9e8e9ef0c282ad2c
+
+COCOAPODS: 1.10.1
