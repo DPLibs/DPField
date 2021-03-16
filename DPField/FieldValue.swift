@@ -57,7 +57,10 @@ open class Field<ValueType: Encodable>: NSObject, FieldValidatable {
     
 }
 
-public protocol FieldsForm: AnyObject {}
+public protocol FieldsForm: AnyObject {
+    func createErrors(with mode: FieldValidation.Mode) -> FieldValidations
+    func createDictionary() -> [String: Any?]
+}
     
 public extension FieldsForm {
     
@@ -88,5 +91,16 @@ public extension FieldsForm {
         
         return result
     }
+    
+//    func qq() {
+//        let mirror = Mirror(reflecting: self)
+//        mirror.children.forEach({ child in
+//            guard let key = child.label, let field = child.value as? FieldValidatable, let value = field.getValue() else { return }
+//
+//
+////            let dictionary = value.dictionary
+////            result[key] = dictionary?.isEmpty == false ? dictionary : value
+//        })
+//    }
     
 }
