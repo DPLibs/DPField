@@ -1,22 +1,5 @@
 import Foundation
 
-struct TestEncodable: Encodable {
-    let testE1: String
-    let testE2: Int
-}
-
-class TestFieldsForm: FieldsForm {
-    let test1: Field<String>
-    let test2: Field<Int>
-    let test3: Field<TestEncodable>
-    
-    init(test1: Field<String>, test2: Field<Int>, test3: Field<TestEncodable>) {
-        self.test1 = test1
-        self.test2 = test2
-        self.test3 = test3
-    }
-}
-
 public protocol FieldValidatable {
     var errors: FieldValidations { get set }
     
@@ -25,11 +8,19 @@ public protocol FieldValidatable {
 }
 
 open class Field<ValueType: Encodable>: NSObject, FieldValidatable {
+    
+    public let didSetValueHanlders = HandlerList<((ValueType?) -> Void)?>()
+    public let didSetErrorsHanlders = HandlerList<((FieldValidations) -> Void)?>()
+    
     public let validations: FieldValidations
     
     public var value: ValueType? {
         didSet {
             self.didSetValue?(self.value)
+            
+            self.didSetValueHanlders.executeHandlers { [weak self] _, handler in
+                handler?(self?.value)
+            }
         }
     }
     
@@ -92,15 +83,33 @@ public extension FieldsForm {
         return result
     }
     
-//    func qq() {
-//        let mirror = Mirror(reflecting: self)
-//        mirror.children.forEach({ child in
-//            guard let key = child.label, let field = child.value as? FieldValidatable, let value = field.getValue() else { return }
-//
-//
-////            let dictionary = value.dictionary
-////            result[key] = dictionary?.isEmpty == false ? dictionary : value
-//        })
-//    }
+}
+
+public typealias HandlerKey = NSObject
+public typealias HanlderTest<Input, Output> = (Input) -> Output
+
+public class HandlerList<HanlderTest> {
+    private var handlers: [HandlerKey: HanlderTest] = [:]
     
+    public init() {}
+    
+    public func appendHandler(_ handler: HanlderTest) -> HandlerKey {
+        let key = HandlerKey()
+        self.handlers[key] = handler
+        return key
+    }
+    
+    public func removeHanlderOfKey(_ key: HandlerKey) {
+        self.handlers.removeValue(forKey: key)
+    }
+    
+    public func removeAllHanlders() {
+        self.handlers.removeAll()
+    }
+    
+    public func executeHandlers(_ execution: ((HandlerKey, HanlderTest) -> Void)?) {
+        self.handlers.forEach({ key, handler in
+            execution?(key, handler)
+        })
+    }
 }
