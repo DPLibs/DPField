@@ -1,37 +1,48 @@
 import Foundation
 
-public protocol FieldValidatable {
+public protocol FormField {
     var errors: FieldValidations { get set }
+    
+    var didSetValueAnyHanlders: HandlerList<((FormField, Any?) -> Void)?> { get set }
+    var didSetErrorsAnyHanlders: HandlerList<((FormField, FieldValidations) -> Void)?> { get set }
     
     func getValue() -> Encodable?
     func updateErrors(with mode: FieldValidation.Mode)
 }
 
-open class Field<ValueType: Encodable>: NSObject, FieldValidatable {
+open class Field<ValueType: Encodable>: NSObject, FormField {
     
-    public let didSetValueHanlders = HandlerList<((ValueType?) -> Void)?>()
-    public let didSetErrorsHanlders = HandlerList<((FieldValidations) -> Void)?>()
+    public var didSetValueAnyHanlders = HandlerList<((FormField, Any?) -> Void)?>()
+    public var didSetErrorsAnyHanlders = HandlerList<((FormField, FieldValidations) -> Void)?>()
+    
+    public typealias DidSetValueHanlder = (ValueType?) -> Void
+    public typealias DidSetErrorsHanlder = (FieldValidations) -> Void
+    
+    public var didSetValueHanlders = HandlerList<DidSetValueHanlder?>()
+    public var didSetErrorsHanlders = HandlerList<DidSetErrorsHanlder?>()
     
     public let validations: FieldValidations
     
     public var value: ValueType? {
         didSet {
-            self.didSetValue?(self.value)
-            
             self.didSetValueHanlders.executeHandlers { [weak self] _, handler in
                 handler?(self?.value)
+            }
+            
+            self.didSetValueAnyHanlders.executeHandlers { [weak self] _, handler in
+                guard let formField = self as? FormField else { return }
+                handler?(formField, self?.value)
             }
         }
     }
     
     public var errors: FieldValidations = [] {
         didSet {
-            self.didSetErrors?(self.errors)
+            self.didSetErrorsHanlders.executeHandlers { [weak self] _, handler in
+                handler?(self?.errors ?? [])
+            }
         }
     }
-    
-    public var didSetValue: ((ValueType?) -> Void)?
-    public var didSetErrors: (([FieldValidation]) -> Void)?
     
     public init(validations: FieldValidations, value: ValueType?) {
         self.validations = validations
@@ -46,21 +57,31 @@ open class Field<ValueType: Encodable>: NSObject, FieldValidatable {
         self.errors = self.validations.gotErrors(for: self.value, with: mode)
     }
     
+    public func appendDidValueHandler(_ handler: DidSetValueHanlder?) -> HandlerKey {
+        self.didSetValueHanlders.appendHandler(handler)
+    }
+    
+    public func appendDidErrorsHandler(_ handler: DidSetErrorsHanlder?) -> HandlerKey {
+        self.didSetErrorsHanlders.appendHandler(handler)
+    }
+    
 }
 
-public protocol FieldsForm: AnyObject {
-    func createErrors(with mode: FieldValidation.Mode) -> FieldValidations
-    func createDictionary() -> [String: Any?]
-}
+open class FieldsForm {
     
-public extension FieldsForm {
+    public var didChangeFieldValueHanlders = HandlerList<((FormField?) -> Void)?>()
+    public var didChangeFieldErrorsHanlders = HandlerList<((FormField?) -> Void)?>()
     
-    func createErrors(with mode: FieldValidation.Mode) -> FieldValidations {
+    public init() {
+        self.setupHandlers()
+    }
+    
+    open func createErrors(with mode: FieldValidation.Mode) -> FieldValidations {
         var result: FieldValidations = []
         let mirror = Mirror(reflecting: self)
         
         mirror.children.forEach({ child in
-            guard let field = child.value as? FieldValidatable else { return }
+            guard let field = child.value as? FormField else { return }
             
             field.updateErrors(with: mode)
             result += field.errors
@@ -69,18 +90,52 @@ public extension FieldsForm {
         return result
     }
     
-    func createDictionary() -> [String: Any?] {
+    open func createDictionary() -> [String: Any?] {
         var result: [String: Any?] = [:]
         let mirror = Mirror(reflecting: self)
         
         mirror.children.forEach({ child in
-            guard let key = child.label, let field = child.value as? FieldValidatable, let value = field.getValue() else { return }
+            guard let key = child.label, let field = child.value as? FormField, let value = field.getValue() else { return }
             
             let dictionary = value.dictionary
             result[key] = dictionary?.isEmpty == false ? dictionary : value
         })
         
         return result
+    }
+    
+    open func setupHandlers() {
+        self.fields.forEach({ field in
+            _ = field.didSetValueAnyHanlders.appendHandler { [weak self] field, _ in
+                self?.didChangeFieldValueHanlders.executeHandlers({ _, handler in
+                    handler?(field)
+                })
+            }
+            
+            _ = field.didSetErrorsAnyHanlders.appendHandler { [weak self] field, _ in
+                self?.didChangeFieldErrorsHanlders.executeHandlers({ _, handler in
+                    handler?(field)
+                })
+            }
+        })
+        
+        let mirror = Mirror(reflecting: self)
+        
+        mirror.children.forEach({ child in
+            guard let key = child.label, let field = child.value as? FormField, let value = field.getValue() else { return }
+            
+            _ = field.didSetValueAnyHanlders.appendHandler { [weak self] field, _ in
+                self?.didChangeFieldValueHanlders.executeHandlers({ _, handler in
+                    handler?(field)
+                })
+            }
+        })
+    }
+    
+    open var fields: [FormField] {
+        let mirror = Mirror(reflecting: self)
+        let result = mirror.children.filter({ $0 is FormField }) as? [FormField]
+        return result ?? []
     }
     
 }

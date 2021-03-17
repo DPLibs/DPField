@@ -23,6 +23,8 @@ class TestFieldsForm: FieldsForm {
         self.test1 = test1
         self.test2 = test2
         self.test3 = test3
+        
+        super.init()
     }
 }
 
@@ -62,19 +64,24 @@ class ViewController: UIViewController {
 //
 //        testHandlerList.value += 1
         
-//        let testForm = TestFieldsForm(test1: .init(validations: .empty, value: "1"), test2: .init(validations: .empty, value: 1), test3: .init(validations: <#T##FieldValidations#>, value: <#T##TestEncodable?#>))
+        let testForm = TestFieldsForm(test1: .init(validations: .empty, value: "1"), test2: .init(validations: .empty, value: 1), test3: .init(validations: .empty, value: .init(testE1: "testE1", testE2: 2)))
         
-        let testField = Field<Int>.init(validations: .empty, value: 1)
-        
-        testField.didSetValueHanlders.appendHandler {  value in
-            print("!!!", value)
+        _ = testForm.didChangeFieldValueHanlders.appendHandler { field in
+            print("!!!", field?.getValue())
         }
-        testField.value = 2
+        
+        testForm.test1.value = "5657"
+//        let testField = Field<Int>.init(validations: .empty, value: 1)
+//
+//        testField.didSetValueHanlders.appendHandler {  value in
+//            print("!!!", value)
+//        }
+//        testField.value = 2
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-            testField.didSetValueHanlders.removeAllHanlders()
-            testField.value = 3
+            testForm.test2.value = 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(600)) {
-                
+                testForm.test3.value = TestEncodable(testE1: "7898908", testE2: 67)
             }
         }
     }
