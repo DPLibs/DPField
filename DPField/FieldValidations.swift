@@ -15,32 +15,3 @@ public extension FieldValidations {
     }
     
 }
-
-// MARK: - Store
-public extension FieldValidations {
-    
-    static var isEmailDefault: FieldValidations {
-        [.isEmailDefault]
-    }
-    
-    static var isDateDefault: FieldValidations {
-        [.isDateDefault]
-    }
-    
-    static var isNumberDefault: FieldValidations {
-        [.isNumberDefault]
-    }
-    
-    static func maxLengthDefault(length: Int) -> FieldValidations {
-        [.maxLengthDefault(length: length)]
-    }
-    
-    static func minLengthDefault(length: Int) -> FieldValidations {
-        [.minLengthDefault(length: length)]
-    }
-    
-    static func matchPredicate(format: String) -> FieldValidations {
-        [.matchPredicate(format: format)]
-    }
-    
-}

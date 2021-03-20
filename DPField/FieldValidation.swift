@@ -58,28 +58,28 @@ open class FieldValidation: LocalizedError {
 // MARK: - FieldValidation + Store
 public extension FieldValidation {
     
-    static var isEmailDefault: EmailFieldValidation {
-        .init(message: "Invalid email", mode: .afterFinish, required: true)
+    static func isEmailDefault(message: String) -> EmailFieldValidation {
+        .init(message: message, mode: .afterFinish, required: true)
     }
     
-    static var isDateDefault: DateFieldValidation {
-        .init(message: "Invalid date", mode: .afterFinish, required: true)
+    static func isDateDefault(message: String) -> DateFieldValidation {
+        .init(message: message, mode: .afterFinish, required: true)
     }
     
-    static var isNumberDefault: NumberFieldValidation {
-        .init(message: "Invalid number", mode: .afterFinish, required: true)
+    static func isNumberDefault(message: String) -> NumberFieldValidation {
+        .init(message: message, mode: .afterFinish, required: true)
     }
     
-    static func maxLengthDefault(length: Int) -> MaxLengthFieldValidation {
-        .init(length: length, message: "Max lenght must be \(length.description)", mode: .any, required: true)
+    static func maxLengthDefault(message: String, length: Int) -> MaxLengthFieldValidation {
+        .init(length: length, message: message, mode: .any, required: true)
     }
     
-    static func minLengthDefault(length: Int) -> MinLengthFieldValidation {
-        .init(length: length, message: "Min lenght must be \(length.description)", mode: .afterFinish, required: true)
+    static func minLengthDefault(message: String, length: Int) -> MinLengthFieldValidation {
+        .init(length: length, message: message, mode: .afterFinish, required: true)
     }
     
-    static func matchPredicate(format: String) -> MatchPredicateFieldValidation {
-        .init(format: format, message: "Does not match the required format", mode: .afterFinish, required: true)
+    static func matchPredicate(message: String, format: String) -> MatchPredicateFieldValidation {
+        .init(format: format, message: message, mode: .afterFinish, required: true)
     }
     
 }

@@ -8,88 +8,65 @@
 
 import UIKit
 import DPField
+import DPLibrary
 
-struct TestEncodable: Encodable {
-    let testE1: String
-    let testE2: Int
-}
-
-class TestFieldsForm: FieldsForm {
-    let test1: Field<String>
-    let test2: Field<Int>
-    let test3: Field<TestEncodable>
+class TestForm: FormFields {
+    let field1: Field<String>
+    let field2: Field<Int>
     
-    init(test1: Field<String>, test2: Field<Int>, test3: Field<TestEncodable>) {
-        self.test1 = test1
-        self.test2 = test2
-        self.test3 = test3
+    init(field1: Field<String>, field2: Field<Int>) {
+        self.field1 = field1
+        self.field2 = field2
         
         super.init()
     }
 }
 
-//class TestHandlerList {
-//    let handlerist = HandlerList<((Int) -> Void)?>()
-//
-//    var value: Int = 0 {
-//        didSet {
-//            self.handlerist.executeHandlers { _, handler in
-//                handler?(self.value)
-//            }
-//        }
-//    }
-//}
-
 class ViewController: UIViewController {
+    
+    private let table = UITableView()
+//    private var rows: [TableCellModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-//        let testHandlerList = TestHandlerList()
-//
-//        let key1 = testHandlerList.handlerist.appendHandler { value in
-//            print("!!! 1:", value)
-//        }
-//
-//        _ = testHandlerList.handlerist.appendHandler { value in
-//            print("!!! 2:", value)
-//
-//            testHandlerList.handlerist.removeHanlderOfKey(key1)
-//        }
-//
-//        _ = testHandlerList.handlerist.appendHandler { value in
-//            print("!!! 3:", value)
-//        }
-//
-//        testHandlerList.value += 1
-        
-        let testForm = TestFieldsForm(test1: .init(validations: .empty, value: "1"), test2: .init(validations: .empty, value: 1), test3: .init(validations: .empty, value: .init(testE1: "testE1", testE2: 2)))
-        
-        _ = testForm.didChangeFieldValueHanlders.appendHandler { field in
-            print("!!!", field?.getValue())
-        }
-        
-        testForm.test1.value = "5657"
-//        let testField = Field<Int>.init(validations: .empty, value: 1)
-//
-//        testField.didSetValueHanlders.appendHandler {  value in
-//            print("!!!", value)
-//        }
-//        testField.value = 2
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
-            testForm.test2.value = 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(600)) {
-                testForm.test3.value = TestEncodable(testE1: "7898908", testE2: 67)
-            }
-        }
+        self.setTable()
+//        self.table.delegate = self
+//        self.table.dataSource = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func setTable() {
+        self.table.removeFromSuperview()
+        self.table.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.table)
+        
+        let guide = self.view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            self.table.topAnchor.constraint(equalTo: guide.topAnchor),
+            self.table.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+            self.table.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            self.table.trailingAnchor.constraint(equalTo: guide.trailingAnchor)
+        ])
     }
 
 }
 
+//// MARK: - UITableViewDelegate
+//extension ViewController: UITableViewDelegate {
+//
+//
+//
+//}
+//
+//// MARK: - UITableViewDataSource
+//extension ViewController: UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        self.rows.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let  let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+//    }
+//
+//}
