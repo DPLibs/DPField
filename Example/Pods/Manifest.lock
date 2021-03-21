@@ -1,12 +1,9 @@
 PODS:
   - DPField (1.0.0):
     - DPLibrary
-  - DPLibrary (2.1.4):
+  - DPLibrary (2.1.7):
     - KeychainSwift (~> 19.0)
     - Kingfisher (~> 5.15.6)
-  - GKExtensions (1.1.0)
-  - GKRepresentable (1.1.2):
-    - GKExtensions (~> 1.1.0)
   - KeychainSwift (19.0.0)
   - Kingfisher (5.15.8):
     - Kingfisher/Core (= 5.15.8)
@@ -15,13 +12,10 @@ PODS:
 DEPENDENCIES:
   - DPField (from `../`)
   - DPLibrary
-  - GKRepresentable
 
 SPEC REPOS:
   trunk:
     - DPLibrary
-    - GKExtensions
-    - GKRepresentable
     - KeychainSwift
     - Kingfisher
 
@@ -31,12 +25,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DPField: 6c119d7ca9aa7c7fbe351604ed336540eeb2177e
-  DPLibrary: d9475dc4799625e5f8cc37f34461becbb5740849
-  GKExtensions: e2336b4ae2a62bfc968fd1a4ced30365ffb3f73b
-  GKRepresentable: 8472c3f1bd3fc7bc9e37e30311048cfee01a99e7
+  DPLibrary: 81512c0b04627f40d79e31045782a2b85dff14be
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
 
-PODFILE CHECKSUM: e1ad90a254b2af7c5928473749bf083c1a9df9c0
+PODFILE CHECKSUM: 274f652ab4c433d991ecaf87533a4807807d545b
 
 COCOAPODS: 1.10.1

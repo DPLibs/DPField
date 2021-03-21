@@ -42,7 +42,8 @@ open class TextFieldAdapter: Field<String>, UITextFieldDelegate {
         }
     }
     
-    private func provideControlEvent(_ event: UIControl.Event) {
+    // MARK: - Public methods
+    open func provideControlEvent(_ event: UIControl.Event) {
         switch event {
         case .editingDidBegin:
             self.errors = []
@@ -61,6 +62,7 @@ open class TextFieldAdapter: Field<String>, UITextFieldDelegate {
         self.output?.didControlEvent(adapter: self, event: event)
     }
 
+    // MARK: - Private methods
     @objc
     private func editingChanged(_ textField: UITextField) {
         self.provideControlEvent(.editingChanged)
@@ -84,7 +86,8 @@ open class TextFieldAdapter: Field<String>, UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text, let textRange = Range(range, in: text) else { return true }
         let updatedText = text.replacingCharacters(in: textRange, with: string)
-        let errors = self.validations.map({ $0.gotError(for: updatedText, with: .realTime) })
+        let errors = self.validations.map({ $0.gotError(for: updatedText, with: .realTime) }).filter({ $0 != nil })
+        self.errors = errors as? FieldValidations ?? []
         return errors.isEmpty
     }
 

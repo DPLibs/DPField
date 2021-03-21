@@ -15,9 +15,13 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7A4341221266CBE5F5B7C436 /* Pods_DPField_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 630C7F2AC6EC7D4246DB1237 /* Pods_DPField_Tests.framework */; };
 		80C846692E2E26CFBADEEBA6 /* Pods_DPField_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D6DBCBB34FCCB5D87AF460 /* Pods_DPField_Example.framework */; };
-		E2D36F902606AECF005F60DF /* TextFieldTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D36F8D2606AECF005F60DF /* TextFieldTableCellModel.swift */; };
-		E2D36F912606AECF005F60DF /* TextFieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D36F8E2606AECF005F60DF /* TextFieldTableCell.swift */; };
-		E2D36F922606AECF005F60DF /* TextFieldTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D36F8F2606AECF005F60DF /* TextFieldTableCell.xib */; };
+		E2D36FCC26077392005F60DF /* TextFieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D36FC926077392005F60DF /* TextFieldTableCell.swift */; };
+		E2D36FCD26077392005F60DF /* TextFieldTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D36FCA26077392005F60DF /* TextFieldTableCell.xib */; };
+		E2D3700B26078411005F60DF /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3700A26078411005F60DF /* UserProfile.swift */; };
+		E2D3701526078956005F60DF /* SaveButtonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D3701226078956005F60DF /* SaveButtonTableCell.swift */; };
+		E2D3701626078956005F60DF /* SaveButtonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D3701326078956005F60DF /* SaveButtonTableCell.xib */; };
+		E2D3702A260798DD005F60DF /* DateTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D37027260798DD005F60DF /* DateTableCell.swift */; };
+		E2D3702B260798DD005F60DF /* DateTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D37028260798DD005F60DF /* DateTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +53,13 @@
 		630C7F2AC6EC7D4246DB1237 /* Pods_DPField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15026551F135280DAF5FB09 /* Pods-DPField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPField_Tests.release.xcconfig"; path = "Target Support Files/Pods-DPField_Tests/Pods-DPField_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A31E69F4E4214A0C865AA2C9 /* Pods-DPField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPField_Tests.debug.xcconfig"; path = "Target Support Files/Pods-DPField_Tests/Pods-DPField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E2D36F8D2606AECF005F60DF /* TextFieldTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableCellModel.swift; sourceTree = "<group>"; };
-		E2D36F8E2606AECF005F60DF /* TextFieldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableCell.swift; sourceTree = "<group>"; };
-		E2D36F8F2606AECF005F60DF /* TextFieldTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableCell.xib; sourceTree = "<group>"; };
+		E2D36FC926077392005F60DF /* TextFieldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableCell.swift; sourceTree = "<group>"; };
+		E2D36FCA26077392005F60DF /* TextFieldTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableCell.xib; sourceTree = "<group>"; };
+		E2D3700A26078411005F60DF /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E2D3701226078956005F60DF /* SaveButtonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonTableCell.swift; sourceTree = "<group>"; };
+		E2D3701326078956005F60DF /* SaveButtonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveButtonTableCell.xib; sourceTree = "<group>"; };
+		E2D37027260798DD005F60DF /* DateTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableCell.swift; sourceTree = "<group>"; };
+		E2D37028260798DD005F60DF /* DateTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableCell.xib; sourceTree = "<group>"; };
 		ECA5B57AA41E35F8E52B6D80 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,13 +107,13 @@
 		607FACD21AFB9204008FA782 /* Example for DPField */ = {
 			isa = PBXGroup;
 			children = (
+				E2D36FC42607735B005F60DF /* Components */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				E2D36F8C2606AEAD005F60DF /* TextFieldCell */,
 			);
 			name = "Example for DPField";
 			path = DPField;
@@ -157,14 +165,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E2D36F8C2606AEAD005F60DF /* TextFieldCell */ = {
+		E2D36FC42607735B005F60DF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E2D36F8E2606AECF005F60DF /* TextFieldTableCell.swift */,
-				E2D36F8F2606AECF005F60DF /* TextFieldTableCell.xib */,
-				E2D36F8D2606AECF005F60DF /* TextFieldTableCellModel.swift */,
+				E2D3700A26078411005F60DF /* UserProfile.swift */,
+				E2D37025260798CB005F60DF /* DateTableCell */,
+				E2D3701026078938005F60DF /* SaveButtonTableCell */,
+				E2D36FC72607737C005F60DF /* TextFieldTableCell */,
 			);
-			name = TextFieldCell;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E2D36FC72607737C005F60DF /* TextFieldTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2D36FC926077392005F60DF /* TextFieldTableCell.swift */,
+				E2D36FCA26077392005F60DF /* TextFieldTableCell.xib */,
+			);
+			path = TextFieldTableCell;
+			sourceTree = "<group>";
+		};
+		E2D3701026078938005F60DF /* SaveButtonTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2D3701226078956005F60DF /* SaveButtonTableCell.swift */,
+				E2D3701326078956005F60DF /* SaveButtonTableCell.xib */,
+			);
+			path = SaveButtonTableCell;
+			sourceTree = "<group>";
+		};
+		E2D37025260798CB005F60DF /* DateTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2D37027260798DD005F60DF /* DateTableCell.swift */,
+				E2D37028260798DD005F60DF /* DateTableCell.xib */,
+			);
+			path = DateTableCell;
 			sourceTree = "<group>";
 		};
 		F7E1B7E74CE5C277E2FECE2C /* Frameworks */ = {
@@ -265,8 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2D36F922606AECF005F60DF /* TextFieldTableCell.xib in Resources */,
+				E2D3702B260798DD005F60DF /* DateTableCell.xib in Resources */,
+				E2D36FCD26077392005F60DF /* TextFieldTableCell.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				E2D3701626078956005F60DF /* SaveButtonTableCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -291,8 +329,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-DPField_Example/Pods-DPField_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DPField/DPField.framework",
 				"${BUILT_PRODUCTS_DIR}/DPLibrary/DPLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/GKExtensions/GKExtensions.framework",
-				"${BUILT_PRODUCTS_DIR}/GKRepresentable/GKRepresentable.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
@@ -300,8 +336,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DPField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DPLibrary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKExtensions.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKRepresentable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
@@ -361,10 +395,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2D36F912606AECF005F60DF /* TextFieldTableCell.swift in Sources */,
+				E2D3700B26078411005F60DF /* UserProfile.swift in Sources */,
+				E2D3701526078956005F60DF /* SaveButtonTableCell.swift in Sources */,
+				E2D36FCC26077392005F60DF /* TextFieldTableCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				E2D36F902606AECF005F60DF /* TextFieldTableCellModel.swift in Sources */,
+				E2D3702A260798DD005F60DF /* DateTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
