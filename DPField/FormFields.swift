@@ -45,8 +45,8 @@ open class FormFields: NSObject {
         return result
     }
 
-    open func createDictionary() -> [String: Any?] {
-        var result: [String: Any?] = [:]
+    open func createDictionary() -> [String: Any] {
+        var result: [String: Any] = [:]
         let mirror = Mirror(reflecting: self)
 
         mirror.children.forEach({ child in

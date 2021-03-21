@@ -130,8 +130,8 @@
 		DE11CD865647A96E3E0F33AB378FD770 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EE265BBFB845525DC3C1A5BB3A1D4E /* Image.swift */; };
 		DEC980A22034C43177490DBBF5B8622C /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FE72F6DFE48E7BA5AD8282F33F86D /* Delegate.swift */; };
 		E0A3C50BB3E1C7F808A581D126AC87D5 /* Pods-DPField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00679B22943B583438B3BF56B760C9C5 /* Pods-DPField_Tests-dummy.m */; };
-		E26073B42607C31800055750 /* FormFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26073B32607C31800055750 /* FormFieldProtocol.swift */; };
-		E26073BC2607C32F00055750 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26073BB2607C32F00055750 /* FormFields.swift */; };
+		E26073DD2607D18C00055750 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26073DB2607D18C00055750 /* FormFields.swift */; };
+		E26073DE2607D18C00055750 /* FormFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26073DC2607D18C00055750 /* FormFieldProtocol.swift */; };
 		E4E75D15F8376AC49349054B4035936C /* StyleWrapper+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A7EB6BBB4D77AECA339B83E66905E /* StyleWrapper+UISearchBar.swift */; };
 		E4F996E98169D8DDF9BDED7F3F63334F /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D258D31E8A05F63ACDB68CE2203FBF6 /* UIButton+Kingfisher.swift */; };
 		E7525327E64C0102F7B261338BB40BB8 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405BFE59D2C57FB46FF889978CE75082 /* Filter.swift */; };
@@ -368,8 +368,8 @@
 		DC73EF5B9446FA7650956C3B2B154773 /* DPLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DPLibrary.release.xcconfig; sourceTree = "<group>"; };
 		DD6295EB9E3B125655B19B438FD23F25 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+Extensions.swift"; path = "DPLibrary/Extensions/UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		E164427CA51A99CA21629C1483B30050 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionHelpers.swift; path = Sources/Utility/ExtensionHelpers.swift; sourceTree = "<group>"; };
-		E26073B32607C31800055750 /* FormFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldProtocol.swift; sourceTree = "<group>"; };
-		E26073BB2607C32F00055750 /* FormFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFields.swift; sourceTree = "<group>"; };
+		E26073DB2607D18C00055750 /* FormFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormFields.swift; path = DPField/FormFields.swift; sourceTree = "<group>"; };
+		E26073DC2607D18C00055750 /* FormFieldProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormFieldProtocol.swift; path = DPField/FormFieldProtocol.swift; sourceTree = "<group>"; };
 		E30052F4D3B5C5F0E6745738D692630B /* Array+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "DPLibrary/Extensions/Array+Extensions.swift"; sourceTree = "<group>"; };
 		E74CF27BD938AAEE814E8FFD43965A30 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		E81CA6B6C91BCBD6D2C028F88F416AAC /* DPLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DPLibrary-Info.plist"; sourceTree = "<group>"; };
@@ -499,11 +499,11 @@
 		2636A7F13713AD414661C3257518B724 /* DPField */ = {
 			isa = PBXGroup;
 			children = (
+				E26073DC2607D18C00055750 /* FormFieldProtocol.swift */,
+				E26073DB2607D18C00055750 /* FormFields.swift */,
 				5E6F31B8AD253887E1AF111AFEA74010 /* Field.swift */,
 				2A930955C2F9FE052501B750439FA168 /* FieldValidation.swift */,
 				5C77DC6A115FB89C054632D39101B4FD /* FieldValidations.swift */,
-				E26073B32607C31800055750 /* FormFieldProtocol.swift */,
-				E26073BB2607C32F00055750 /* FormFields.swift */,
 				9990217C62FCAEB14F5E5E7A983EC322 /* Adapters */,
 				60F90F0B5B8B35D0DB84A7CD393F291E /* Pod */,
 				DE27D56284A3CE52A38B1212D2C91D66 /* Support Files */,
@@ -1052,10 +1052,10 @@
 				DD21C31E2985E8B8A47F2CF2EE0CCE1E /* DateFieldAdapter.swift in Sources */,
 				460F8BB8EC343063000306AA102DA7AD /* DPField-dummy.m in Sources */,
 				5EE8B71EE0C31EAD436A2FC67BBACE33 /* Field.swift in Sources */,
+				E26073DD2607D18C00055750 /* FormFields.swift in Sources */,
+				E26073DE2607D18C00055750 /* FormFieldProtocol.swift in Sources */,
 				B8133230E9196DAD54F391C53FF861CF /* FieldValidation.swift in Sources */,
-				E26073B42607C31800055750 /* FormFieldProtocol.swift in Sources */,
 				83A498DC5909D461B3A58DA0550923F7 /* FieldValidations.swift in Sources */,
-				E26073BC2607C32F00055750 /* FormFields.swift in Sources */,
 				96FF41A367BBF21929E41704FA0D92B8 /* TextFieldAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
