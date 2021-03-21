@@ -130,6 +130,8 @@
 		DE11CD865647A96E3E0F33AB378FD770 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EE265BBFB845525DC3C1A5BB3A1D4E /* Image.swift */; };
 		DEC980A22034C43177490DBBF5B8622C /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FE72F6DFE48E7BA5AD8282F33F86D /* Delegate.swift */; };
 		E0A3C50BB3E1C7F808A581D126AC87D5 /* Pods-DPField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00679B22943B583438B3BF56B760C9C5 /* Pods-DPField_Tests-dummy.m */; };
+		E26073B42607C31800055750 /* FormFieldProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26073B32607C31800055750 /* FormFieldProtocol.swift */; };
+		E26073BC2607C32F00055750 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26073BB2607C32F00055750 /* FormFields.swift */; };
 		E4E75D15F8376AC49349054B4035936C /* StyleWrapper+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A7EB6BBB4D77AECA339B83E66905E /* StyleWrapper+UISearchBar.swift */; };
 		E4F996E98169D8DDF9BDED7F3F63334F /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D258D31E8A05F63ACDB68CE2203FBF6 /* UIButton+Kingfisher.swift */; };
 		E7525327E64C0102F7B261338BB40BB8 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405BFE59D2C57FB46FF889978CE75082 /* Filter.swift */; };
@@ -215,7 +217,7 @@
 		05B435E3EA379B1587C766D9E8098D9C /* DateFormatType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatType.swift; path = DPLibrary/Classes/DateFormatType.swift; sourceTree = "<group>"; };
 		07A711A08E30E1A993FD316FB18F3AAA /* ImageProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessor.swift; path = Sources/Image/ImageProcessor.swift; sourceTree = "<group>"; };
 		07F38303E0D005807AE33191285AE8C0 /* DPField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DPField-umbrella.h"; sourceTree = "<group>"; };
-		08B368EC5EC482C33AF5183B4786D3E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		08B368EC5EC482C33AF5183B4786D3E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A72D9E988977570CBDDEFA88F56D0F7 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIApplication+Extensions.swift"; path = "DPLibrary/Extensions/UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		107BE5FBC4CD68A05A5870958E411558 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Utility/Result.swift; sourceTree = "<group>"; };
 		11E261403D6300CA6B0075491916E7C8 /* ImageModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageModel.swift; path = DPLibrary/Classes/ImageModel.swift; sourceTree = "<group>"; };
@@ -260,7 +262,7 @@
 		4B80628526CFE7E2E51BEA8865506460 /* SizeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeExtensions.swift; path = Sources/Utility/SizeExtensions.swift; sourceTree = "<group>"; };
 		4BFC91C80441F66BD945F4A95CBE4B46 /* Pods-DPField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DPField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C98DF9777CB60C47E3E68CA8A5C6113 /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+Extensions.swift"; path = "DPLibrary/Extensions/NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
-		4EC80965244A6D24BA9FF035134466C4 /* DPField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DPField.framework; path = DPField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EC80965244A6D24BA9FF035134466C4 /* DPField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5015561985FD03D89BA14BE3AD36EB1D /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Sources/General/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
 		546F47CE7C7CA7E2653410E74F15068D /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Sources/Networking/RedirectHandler.swift; sourceTree = "<group>"; };
 		55176BA5778A75F8FAE3C3B85E4C6AF4 /* NSButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSButton+Kingfisher.swift"; path = "Sources/Extensions/NSButton+Kingfisher.swift"; sourceTree = "<group>"; };
@@ -272,7 +274,7 @@
 		5DB940CD142169ED56F2D37EE669EAD0 /* DateFieldAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateFieldAdapter.swift; sourceTree = "<group>"; };
 		5E23E3120B5D875EB2DCF482B0B05C4B /* Pods-DPField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DPField_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5E6F31B8AD253887E1AF111AFEA74010 /* Field.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Field.swift; path = DPField/Field.swift; sourceTree = "<group>"; };
-		5F98CBDD2E8A0581D06F7DB52DCC956D /* Pods_DPField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DPField_Example.framework; path = "Pods-DPField_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F98CBDD2E8A0581D06F7DB52DCC956D /* Pods_DPField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		617DD4C8D0D6BBF3965393FAD2D4B961 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		63B619A6F2EE0A64E778E2EEA5EF78F2 /* AppServerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppServerConfiguration.swift; path = DPLibrary/Classes/AppServerConfiguration.swift; sourceTree = "<group>"; };
 		6451BBEFC410D6F3A5BDFE64C087833B /* StyleWrapper+UISwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UISwitch.swift"; path = "DPLibrary/Classes/StyleWrapper/StyleWrapper+UISwitch.swift"; sourceTree = "<group>"; };
@@ -290,7 +292,7 @@
 		7043AE465E3540ED0FF79BC949CA111F /* NumberAdduction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NumberAdduction.swift; path = DPLibrary/Protocols/NumberAdduction/NumberAdduction.swift; sourceTree = "<group>"; };
 		70B65582C9DF5FF9BB448F03E9CBABF1 /* Distance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distance.swift; path = DPLibrary/Classes/Distance.swift; sourceTree = "<group>"; };
 		721F2E098F2943A3D30489F7399A55B1 /* AuthenticationChallengeResponsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationChallengeResponsable.swift; path = Sources/Networking/AuthenticationChallengeResponsable.swift; sourceTree = "<group>"; };
-		73287A376A9DC3C2094AF9D2E9AD289C /* DPField.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DPField.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		73287A376A9DC3C2094AF9D2E9AD289C /* DPField.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DPField.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		764256D950E0E08F117F3AA9C9B52D3C /* StyleWrapper+UIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UIScrollView.swift"; path = "DPLibrary/Classes/StyleWrapper/StyleWrapper+UIScrollView.swift"; sourceTree = "<group>"; };
 		77693E920C24932832E7DDE3EB2033CF /* KeychainSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KeychainSwift-Info.plist"; sourceTree = "<group>"; };
 		792E3DE498093059B151781346CE7B70 /* KeychainSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwift.swift; path = Sources/KeychainSwift.swift; sourceTree = "<group>"; };
@@ -314,9 +316,9 @@
 		950A7EB6BBB4D77AECA339B83E66905E /* StyleWrapper+UISearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UISearchBar.swift"; path = "DPLibrary/Classes/StyleWrapper/StyleWrapper+UISearchBar.swift"; sourceTree = "<group>"; };
 		9907625948CF1FF2169DD899169462F5 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC2E4AD56CBB53F852F4973284C34AB /* StyleWrapper+UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UIView.swift"; path = "DPLibrary/Classes/StyleWrapper/StyleWrapper+UIView.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F7740B2EDF35C44A22901347A103F5A /* DPLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DPLibrary.framework; path = DPLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F7740B2EDF35C44A22901347A103F5A /* DPLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF24E1B546FDA8BA4DB0D3C54C8F506 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Extensions.swift"; path = "DPLibrary/Extensions/UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		A2395FE25BDB3A286A99F4F82200856B /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/Extensions/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		A37C744AAD735B20B0C1C17360559E22 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NotificationCenter+Extensions.swift"; path = "DPLibrary/Extensions/NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
@@ -324,7 +326,7 @@
 		A59C56136B5285B64530BB824D1C0F9A /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Extensions.swift"; path = "DPLibrary/Extensions/UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		A6CF3AD092A7C3F5E965A65C1F7381E4 /* ViewState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewState.swift; path = DPLibrary/Enums/ViewState.swift; sourceTree = "<group>"; };
 		A890F9059FD4B754B9A70608633DB997 /* SessionDataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDataTask.swift; path = Sources/Networking/SessionDataTask.swift; sourceTree = "<group>"; };
-		A8C05FB8720C971477303D6D2FC5922D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A8C05FB8720C971477303D6D2FC5922D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AB39AD99E1BC9FA32D40D04E4A685B64 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		ABB0538FA5347C185CA4D622F0B13F88 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC785D3BB0441DEF86EA7E6A7964DA46 /* KeychainSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-prefix.pch"; sourceTree = "<group>"; };
@@ -343,7 +345,7 @@
 		BB769A62745F46402538ABFB3393FE87 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Networking/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		BBAFAE1C68E7DAA32E5258E8B46A8942 /* KeychainSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainSwift.release.xcconfig; sourceTree = "<group>"; };
 		BD7CC7D7849A5AAACF51234DA3B566A8 /* KingfisherError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherError.swift; path = Sources/General/KingfisherError.swift; sourceTree = "<group>"; };
-		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4078377C1BD3F44D5EE78F22091906F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C65D510219316815C1C5AEA0D80EAC8F /* KeychainSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainSwift.modulemap; sourceTree = "<group>"; };
 		C6BD7F29A109E0D6AA6019A7DE5EAFEC /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
@@ -359,13 +361,15 @@
 		D6589496FFA9544363A4142DC4E14C11 /* RetryStrategy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryStrategy.swift; path = Sources/Networking/RetryStrategy.swift; sourceTree = "<group>"; };
 		D6F664851541B31882A3F9747955D1BD /* DPField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DPField.modulemap; sourceTree = "<group>"; };
 		D6F94C46E7BE575B1509C3961F80C0DD /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/General/KingfisherManager.swift; sourceTree = "<group>"; };
-		D71926951DCDA5FCE5C1E01EE11B6EC6 /* Pods_DPField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DPField_Tests.framework; path = "Pods-DPField_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71926951DCDA5FCE5C1E01EE11B6EC6 /* Pods_DPField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72BDB994D283EC5A0FB860B696E8225 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Networking/ImageDownloader.swift; sourceTree = "<group>"; };
 		D7BAA25D0A06A494C2D68172815614C0 /* Stylable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stylable.swift; path = DPLibrary/Classes/StyleWrapper/Stylable.swift; sourceTree = "<group>"; };
 		DA3902C308EB8C5E645B156EBC1252E7 /* Pods-DPField_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DPField_Tests-Info.plist"; sourceTree = "<group>"; };
 		DC73EF5B9446FA7650956C3B2B154773 /* DPLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DPLibrary.release.xcconfig; sourceTree = "<group>"; };
 		DD6295EB9E3B125655B19B438FD23F25 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+Extensions.swift"; path = "DPLibrary/Extensions/UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		E164427CA51A99CA21629C1483B30050 /* ExtensionHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionHelpers.swift; path = Sources/Utility/ExtensionHelpers.swift; sourceTree = "<group>"; };
+		E26073B32607C31800055750 /* FormFieldProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldProtocol.swift; sourceTree = "<group>"; };
+		E26073BB2607C32F00055750 /* FormFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFields.swift; sourceTree = "<group>"; };
 		E30052F4D3B5C5F0E6745738D692630B /* Array+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "DPLibrary/Extensions/Array+Extensions.swift"; sourceTree = "<group>"; };
 		E74CF27BD938AAEE814E8FFD43965A30 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
 		E81CA6B6C91BCBD6D2C028F88F416AAC /* DPLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DPLibrary-Info.plist"; sourceTree = "<group>"; };
@@ -498,6 +502,8 @@
 				5E6F31B8AD253887E1AF111AFEA74010 /* Field.swift */,
 				2A930955C2F9FE052501B750439FA168 /* FieldValidation.swift */,
 				5C77DC6A115FB89C054632D39101B4FD /* FieldValidations.swift */,
+				E26073B32607C31800055750 /* FormFieldProtocol.swift */,
+				E26073BB2607C32F00055750 /* FormFields.swift */,
 				9990217C62FCAEB14F5E5E7A983EC322 /* Adapters */,
 				60F90F0B5B8B35D0DB84A7CD393F291E /* Pod */,
 				DE27D56284A3CE52A38B1212D2C91D66 /* Support Files */,
@@ -578,7 +584,6 @@
 				36BACAAB06C957E2FAB7BC6B962B592E /* TegKeychainConstants.swift */,
 				E742721152B6E5CCE2698723A7CB3D68 /* Support Files */,
 			);
-			name = KeychainSwift;
 			path = KeychainSwift;
 			sourceTree = "<group>";
 		};
@@ -660,7 +665,6 @@
 				460709F44247EBFBAAEE1EFE545527B5 /* WeekDay.swift */,
 				C3D5DAA72905B27C5353C0548E7C0420 /* Support Files */,
 			);
-			name = DPLibrary;
 			path = DPLibrary;
 			sourceTree = "<group>";
 		};
@@ -789,7 +793,6 @@
 				DF6CF853A686B0DE3A2420DF68C09D13 /* Core */,
 				4E26441A2E06A814CC7B78BACE3817F6 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -1050,7 +1053,9 @@
 				460F8BB8EC343063000306AA102DA7AD /* DPField-dummy.m in Sources */,
 				5EE8B71EE0C31EAD436A2FC67BBACE33 /* Field.swift in Sources */,
 				B8133230E9196DAD54F391C53FF861CF /* FieldValidation.swift in Sources */,
+				E26073B42607C31800055750 /* FormFieldProtocol.swift in Sources */,
 				83A498DC5909D461B3A58DA0550923F7 /* FieldValidations.swift in Sources */,
+				E26073BC2607C32F00055750 /* FormFields.swift in Sources */,
 				96FF41A367BBF21929E41704FA0D92B8 /* TextFieldAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1546,8 +1551,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

@@ -48,12 +48,6 @@ open class FieldValidation: LocalizedError {
         guard self.modeIsMatch(to: mode) else { return nil }
         return self.gotError(for: value)
     }
-    
-    open func validateShouldChangeCharacters(text: String?, in range: NSRange, replacementString string: String) -> Self? {
-        guard let text = text, let textRange = Range(range, in: text) else { return nil }
-        let updatedText = text.replacingCharacters(in: textRange, with: string)
-        return self.gotError(for: updatedText, with: .realTime)
-    }
 }
 
 // MARK: - FieldValidation + Store
