@@ -25,7 +25,7 @@ open class DateFieldAdapter: Field<Date>, UITextFieldDelegate {
         didSet {
             self.textField?.delegate = self
             self.setDatePicker()
-            self.didSetValue()
+            self.textField?.text = self.value?.toLocalString(withFormatType: self.dateFormatType)
         }
     }
     
@@ -49,7 +49,8 @@ open class DateFieldAdapter: Field<Date>, UITextFieldDelegate {
     
     public override var value: Date? {
         didSet {
-            self.didSetValue()
+            self.textField?.text = self.value?.toLocalString(withFormatType: self.dateFormatType)
+            self.output?.didDateChanged(adapter: self, date: self.value)
         }
     }
 
@@ -76,9 +77,9 @@ open class DateFieldAdapter: Field<Date>, UITextFieldDelegate {
             self.errors = []
         case .valueChanged,
              .editingChanged:
-            self.createErrors(with: .realTime)
+            self.generateErrors(with: .realTime)
         case .editingDidEnd:
-            self.createErrors(with: .any)
+            self.generateErrors(with: .any)
         default:
             break
         }
@@ -107,11 +108,6 @@ open class DateFieldAdapter: Field<Date>, UITextFieldDelegate {
         self.textField?.inputView = self.datePicker
     }
     
-    open func didSetValue() {
-        self.textField?.text = self.value?.toLocalString(withFormatType: self.dateFormatType)
-        self.output?.didDateChanged(adapter: self, date: self.value)
-    }
-    
     // MARK: - Private methods
     @objc
     private func datePickerValueChanged() {
@@ -136,7 +132,7 @@ open class DateFieldAdapter: Field<Date>, UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text, let textRange = Range(range, in: text) else { return true }
         let updatedText = text.replacingCharacters(in: textRange, with: string)
-        let errors = self.validations.map({ $0.gotError(for: updatedText, with: .realTime) }).filter({ $0 != nil })
+        let errors = self.validations.map({ $0.validate(for: updatedText, with: .realTime) }).filter({ $0 != nil })
         self.errors = errors as? FieldValidations ?? []
         return errors.isEmpty
     }

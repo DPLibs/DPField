@@ -67,16 +67,18 @@ class ViewController: UIViewController {
     }
     
     private func tapSave() {
-        let errors = self.userProfile.createErrors(with: .afterFinish)
+        self.userProfile.generateErrors(with: .afterFinish)
         
-        guard errors.isEmpty else {
+        guard self.userProfile.getErrors().isEmpty else {
             self.table.reloadData()
             return
         }
         
-        let dictionary = self.userProfile.createDictionary()
-        
-        let alert = UIAlertController(title: "Success!", message: "Dictionary created: \(dictionary)", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "Success!",
+            message: "Form fields values changed: \(self.userProfile.isChanged).\n\n Dictionary: \(self.userProfile.createDictionary())",
+            preferredStyle: .alert
+        )
         alert.addAction(.init(title: "OK", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)

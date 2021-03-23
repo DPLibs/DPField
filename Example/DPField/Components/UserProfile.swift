@@ -17,17 +17,17 @@ class UserProfile: FormFields {
     
     override init() {
         let maxLength: Int = 16
-        let minLength: Int = 8
+        let minLength: Int = 1
         
         let nameValidations: DPField.FieldValidations = [
             .minLengthDefault(message: "Min length \(minLength.description) symblos", length: minLength),
             .maxLengthDefault(message: "Max length \(maxLength.description) symblos", length: maxLength)
         ]
         
-        self.firstName = .init(validations: nameValidations, value: nil)
-        self.lastName = .init(validations: nameValidations, value: nil)
-        self.middleName = .init(validations: nameValidations, value: nil)
-        self.birthDate = .init(minDate: nil, maxDate: nil, validations: [.isDateDefault(message: "Need birth date")], value: nil)
+        self.firstName = .init(validations: nameValidations, value: "Дмитрий")
+        self.lastName = .init(validations: nameValidations, value: "П")
+        self.middleName = .init(validations: nameValidations, value: "А")
+        self.birthDate = .init(minDate: nil, maxDate: nil, validations: [.isDateDefault(message: "Need birth date")], value: Date())
         
         super.init()
     }
