@@ -42,11 +42,11 @@ open class FieldValidation: LocalizedError {
         self.mode.contains(mode) || self.mode == mode || mode.contains(self.mode)
     }
     
-    open func gotError(for value: Any?) -> Self? { nil }
+    open func validate(for value: Any?) -> Self? { nil }
     
-    open func gotError(for value: Any?, with mode: FieldValidation.Mode) -> Self? {
+    open func validate(for value: Any?, with mode: FieldValidation.Mode) -> Self? {
         guard self.modeIsMatch(to: mode) else { return nil }
-        return self.gotError(for: value)
+        return self.validate(for: value)
     }
 }
 
@@ -73,8 +73,8 @@ public extension FieldValidation {
         .init(length: length, message: message, mode: .afterFinish, required: true)
     }
     
-    static func matchPredicate(message: String, format: String) -> MatchPredicateFieldValidation {
-        .init(format: format, message: message, mode: .afterFinish, required: true)
+    static func matchPredicateDefault(message: String, format: String, mode: FieldValidation.Mode, required: Bool) -> MatchPredicateFieldValidation {
+        .init(format: format, message: message, mode: mode, required: required)
     }
     
 }
@@ -82,7 +82,7 @@ public extension FieldValidation {
 // MARK: - Email validation
 open class EmailFieldValidation: FieldValidation {
     
-    open override func gotError(for value: Any?) -> Self? {
+    open override func validate(for value: Any?) -> Self? {
         guard let value = value as? String, !value.isEmpty else { return self.required ? self : nil }
         let predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         let isValid = predicate.evaluate(with: value)
@@ -94,7 +94,7 @@ open class EmailFieldValidation: FieldValidation {
 // MARK: - Date validation
 open class DateFieldValidation: FieldValidation {
     
-    open override func gotError(for value: Any?) -> Self? {
+    open override func validate(for value: Any?) -> Self? {
         guard let value = value else { return self.required ? self : nil }
         return value is Date ? nil : self
     }
@@ -104,7 +104,7 @@ open class DateFieldValidation: FieldValidation {
 // MARK: - Number validation
 open class NumberFieldValidation: FieldValidation {
     
-    open override func gotError(for value: Any?) -> Self? {
+    open override func validate(for value: Any?) -> Self? {
         guard let value = value else { return self.required ? self : nil }
         var isValid: Bool
         
@@ -159,7 +159,7 @@ open class MaxLengthFieldValidation: FieldValidation {
         super.init(message: message, mode: mode, required: required)
     }
     
-    open override func gotError(for value: Any?) -> Self? {
+    open override func validate(for value: Any?) -> Self? {
         guard let value = value as? String else { return self.required ? self : nil }
         let isValid = value.count <= self.length
         return isValid ? nil : self
@@ -176,7 +176,7 @@ open class MinLengthFieldValidation: FieldValidation {
         super.init(message: message, mode: mode, required: required)
     }
     
-    open override func gotError(for value: Any?) -> Self? {
+    open override func validate(for value: Any?) -> Self? {
         guard let value = value as? String else { return self.required ? self : nil }
         let isValid = value.count >= self.length
         return isValid ? nil : self
@@ -192,7 +192,7 @@ open class MatchPredicateFieldValidation: FieldValidation {
         super.init(message: message, mode: mode, required: required)
     }
     
-    open override func gotError(for value: Any?) -> Self? {
+    open override func validate(for value: Any?) -> Self? {
         guard let value = value as? String, !value.isEmpty else { return self.required ? self : nil }
         let predicate = NSPredicate(format: "SELF MATCHES %@", self.format)
         let isValid = predicate.evaluate(with: value)

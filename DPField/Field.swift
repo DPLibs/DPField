@@ -1,7 +1,7 @@
 import Foundation
 import DPLibrary
 
-open class Field<Value>: NSObject, FormFieldProtocol {
+open class Field<Value: Equatable>: NSObject, FormFieldProtocol {
     
     // MARK: - Props
     public typealias DidSetValueHanlder = (Value?) -> Void
@@ -65,10 +65,6 @@ open class Field<Value>: NSObject, FormFieldProtocol {
     public var didChangeFieldValueHanlders = Handlers<((FormFieldProtocol?) -> Void)?>()
     public var didChangeFieldErrorsHanlders = Handlers<((FormFieldProtocol?) -> Void)?>()
     
-    open var needAppendToDictionary: Bool {
-        true
-    }
-    
     open func getValue() -> Any? {
         self.value
     }
@@ -77,24 +73,16 @@ open class Field<Value>: NSObject, FormFieldProtocol {
         self.errors
     }
     
-    open func createErrors(with mode: FieldValidation.Mode) {
-        self.errors = self.validations.gotErrors(for: self.value, with: mode)
+    open func generateErrors(with mode: FieldValidation.Mode) {
+        self.errors = self.validations.validate(for: self.value, with: mode)
     }
     
-    public func gotErrors(with mode: FieldValidation.Mode) -> FieldValidations {
-        self.validations.gotErrors(for: self.value, with: mode)
+    public func validate(with mode: FieldValidation.Mode) -> FieldValidations {
+        self.validations.validate(for: self.value, with: mode)
     }
     
-    open func keyForDictionary() -> String? {
-        nil
-    }
-    
-    open func valueForDictionary() -> Any? {
-        if let dictionary = (self.value as? Codable)?.dictionary, !dictionary.isEmpty {
-            return dictionary
-        } else {
-            return self.value as? Codable
-        }
+    public func isEqualToFieldValue(_ fieldValue: Any?) -> Bool {
+        self.value == (fieldValue as? Value)
     }
 }
 

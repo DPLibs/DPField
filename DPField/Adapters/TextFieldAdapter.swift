@@ -25,6 +25,7 @@ open class TextFieldAdapter: Field<String>, UITextFieldDelegate {
         didSet {
             self.textField?.delegate = self
             self.textField?.addTarget(self, action: #selector(self.editingChanged(_:)), for: .editingChanged)
+            self.textField?.text = self.value
         }
     }
     
@@ -51,10 +52,10 @@ open class TextFieldAdapter: Field<String>, UITextFieldDelegate {
         case .valueChanged,
              .editingChanged:
             self.value = self.textField?.text
-            self.createErrors(with: .realTime)
+            self.generateErrors(with: .realTime)
         case .editingDidEnd:
             self.value = self.textField?.text
-            self.createErrors(with: .any)
+            self.generateErrors(with: .any)
         default:
             break
         }
@@ -86,7 +87,7 @@ open class TextFieldAdapter: Field<String>, UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text, let textRange = Range(range, in: text) else { return true }
         let updatedText = text.replacingCharacters(in: textRange, with: string)
-        let errors = self.validations.map({ $0.gotError(for: updatedText, with: .realTime) }).filter({ $0 != nil })
+        let errors = self.validations.map({ $0.validate(for: updatedText, with: .realTime) }).filter({ $0 != nil })
         self.errors = errors as? FieldValidations ?? []
         return errors.isEmpty
     }
