@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DPField'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'DP field'
   s.description      = 'A set of useful utilities'
   s.homepage         = 'https://github.com/DPLibs/DPField'
