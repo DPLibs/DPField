@@ -12,7 +12,7 @@ open class Field<Value: Equatable>: NSObject, FormFieldProtocol {
     
     public let validations: FieldValidations
 
-    public var value: Value? {
+    open var value: Value? {
         didSet {
             self.didSetValueHanlders.execute { [weak self] _, handler in
                 handler?(self?.value)
@@ -24,7 +24,7 @@ open class Field<Value: Equatable>: NSObject, FormFieldProtocol {
         }
     }
     
-    public var errors: FieldValidations = [] {
+    open var errors: FieldValidations = [] {
         didSet {
             self.didSetErrorsHanlders.execute { [weak self] _, handler in
                 handler?(self?.errors ?? [])
@@ -77,11 +77,11 @@ open class Field<Value: Equatable>: NSObject, FormFieldProtocol {
         self.errors = self.validations.validate(for: self.value, with: mode)
     }
     
-    public func validate(with mode: FieldValidation.Mode) -> FieldValidations {
+    open func validate(with mode: FieldValidation.Mode) -> FieldValidations {
         self.validations.validate(for: self.value, with: mode)
     }
     
-    public func isEqualToFieldValue(_ fieldValue: Any?) -> Bool {
+    open func isEqualToFieldValue(_ fieldValue: Any?) -> Bool {
         self.value == (fieldValue as? Value)
     }
 }
