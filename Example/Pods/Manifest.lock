@@ -1,7 +1,7 @@
 PODS:
-  - DPField (1.0.0):
+  - DPField (1.0.4):
     - DPLibrary
-  - DPLibrary (2.1.7):
+  - DPLibrary (2.1.11):
     - KeychainSwift (~> 19.0)
     - Kingfisher (~> 5.15.6)
   - KeychainSwift (19.0.0)
@@ -24,8 +24,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DPField: 6c119d7ca9aa7c7fbe351604ed336540eeb2177e
-  DPLibrary: 81512c0b04627f40d79e31045782a2b85dff14be
+  DPField: 8f0db9271d39af4c327e5ddf4bc8a25cec08ff20
+  DPLibrary: 479fd89acef8cb784a42def989dcc57d6f318816
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
 
